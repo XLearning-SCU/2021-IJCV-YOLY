@@ -3,7 +3,6 @@
 
 import os
 import torch
-import argparse
 
 class VAE(torch.nn.Module):
     def __init__(self, size):
