@@ -15,7 +15,7 @@ import torch
 import torch.nn as nn
 from net.vae import VAE
 import numpy as np
-from net.Net import My_Net
+from net.Net import Net
 from options import options
 
 def get_dark_channel(image, w=15):
@@ -109,11 +109,11 @@ class Dehaze(object):
         self.image_torch = np_to_torch(self.image).type(torch.cuda.FloatTensor)
 
     def _init_nets(self):
-        image_net = My_Net(out_channel=3)
+        image_net = Net(out_channel=3)
 
         self.image_net = image_net.type(self.data_type)
 
-        mask_net = My_Net(out_channel=1)
+        mask_net = Net(out_channel=1)
 
         self.mask_net = mask_net.type(self.data_type)
 
