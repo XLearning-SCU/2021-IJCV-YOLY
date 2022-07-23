@@ -277,7 +277,7 @@ def prepare_gt(file_name, dataset='HSTS'):
     """
     if dataset== 'SOTS':
         # img_pil = crop_image(crop_white_side(get_image(file_name, -1)[0], d=10), d=32)
-        img_pil = crop_white_side(get_image(file_name, -1)[0], d=10)
+        img_pil = crop_image(crop_white_side(get_image(file_name, -1)[0], d=10), d=32)
     else:
         img_pil = crop_image(get_image(file_name, -1)[0], d=32)
 
